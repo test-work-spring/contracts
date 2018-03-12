@@ -1,0 +1,54 @@
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    	
+	<title>Договоры</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+		
+	<div class="container">
+	
+       <h2>Договоры</h2>
+       <p>
+       		<button type="button" id="create-contract" class="btn btn-lg btn-primary">
+       			Создать договор
+       		</button>
+      	</p>
+
+		<table id="contract-table" class="table">
+            <colgroup>
+                <col style="width: 30%">
+                <col style="width: 50%">
+                <col style="width: 20%">
+            </colgroup>
+			<thead>
+				<tr>
+					<th>Номер договора</th>
+					<th>Документ</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>	
+	</div>
+		
+	<input type="file" id="new-document" style="display:none">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+	<script src="js/contracts.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("body").contracts({
+				contractApiUrl: "api/contracts/",
+			});		
+		});
+	</script>
+
+</body>
+</html>
